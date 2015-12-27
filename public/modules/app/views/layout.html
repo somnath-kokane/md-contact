@@ -1,0 +1,55 @@
+
+<style>
+  md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  }
+  md-list .md-button.selected {
+  color: #03a9f4;
+  }
+  #vertical-navigation md-toolbar {
+  height: 150px;
+  }
+</style>
+<div class="layout-row flex">
+  <md-sidenav id="vertical-navigation" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left-sidenav" class="md-whiteframe-1dp">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h1>Contact Manager</h1>
+      </div>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <md-list>
+      <md-list-item>
+        <md-button ui-sref="home" class="md-block">Home</md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref="contact.list" class="md-block">Contacts</md-button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <div class="layout-column flex">
+    <md-toolbar class="md-menu-toolbar md-whiteframe-1dp">
+      <div class="layout-row">
+        <md-button ng-click="vm.Sidenav(&quot;left-sidenav&quot;).toggle()" hide-gt-sm="">
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button><span flex=""></span>
+        <md-menu-bar>
+          <md-menu md-position-mode="left bottom">
+            <md-button ng-click="$mdOpenMenu()">Somnath
+              <ng-md-icon icon="arrow_drop_down"></ng-md-icon>
+            </md-button>
+            <md-menu-content width="3">
+              <md-menu-item>
+                <md-button ui-sref="logout">Logout</md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-menu-bar>
+      </div>
+    </md-toolbar>
+    <md-content id="content" ui-view="" class="flex md-hue-1"></md-content>
+  </div>
+</div>

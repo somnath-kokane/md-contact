@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Manager</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="libs/angular-material/angular-material.css">
+    <link rel="stylesheet" href="libs/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        #main {
+            height: 100%;
+            max-height: 100%;
+        }
+    </style>
+    <script src='libs/angular/angular.js'></script>
+    <script src='libs/angular-ui-router/release/angular-ui-router.js'></script>
+    <script src='libs/angular-aria/angular-aria.js'></script>
+    <script src='libs/angular-animate/angular-animate.js'></script>
+    <script src='libs/angular-messages/angular-messages.js'></script>
+    <script src='libs/angular-material-icons/angular-material-icons.js'></script>
+    <script src='libs/angular-material/angular-material.js'></script>
+    <script src='bundle.js'></script>
+    <script>
+        angular.module('main', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons',
+            'app', 'app.contact']);
+        angular.element(document).ready(function(){
+            angular.bootstrap(document, ['main']);
+        })
+    </script>
+</head>
+<body>
+    <div class='layout-column' id='main' ui-view>
+</body>
+</html>

@@ -1,0 +1,39 @@
+style.
+  md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  }
+  md-list .md-button.selected {
+  color: #03a9f4;
+  }
+  #vertical-navigation md-toolbar {
+  height: 150px;
+  }
+.layout-row.flex
+  md-sidenav#vertical-navigation.md-whiteframe-1dp(md-is-locked-open="$mdMedia('gt-sm')", md-component-id='left-sidenav')
+    md-toolbar
+      .md-toolbar-tools
+        h1 Contact Manager
+    md-divider
+    md-list
+      md-list-item
+        md-button.md-block(ui-sref='home') Home
+      md-list-item
+        md-button.md-block(ui-sref='contact.list') Contacts
+  .layout-column.flex
+    md-toolbar.md-menu-toolbar.md-whiteframe-1dp
+      .layout-row
+        md-button(ng-click='vm.Sidenav("left-sidenav").toggle()', hide-gt-sm='')
+          ng-md-icon(icon='menu')
+        span(flex='')
+        md-menu-bar
+          md-menu(md-position-mode='left bottom')
+            md-button(ng-click='$mdOpenMenu()')
+              | Somnath
+              ng-md-icon(icon='arrow_drop_down')
+            md-menu-content(width='3')
+              md-menu-item
+                md-button(ui-sref='logout') Logout
+    md-content#content.flex.md-hue-1(ui-view='')

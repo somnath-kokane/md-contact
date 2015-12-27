@@ -1,0 +1,11 @@
+md-content.layout-row.flex
+  div(style='border-right:1px solid rgba(0,0,0,.12)')
+    md-list
+      md-list-item(ng-repeat='contact in vm.contacts' 
+        ng-click='vm.onSelect(contact)'
+        ng-class='{selected:vm.contact.id == contact.id}')
+        img.md-avatar(ng-src='images/faces/{{contact.id}}.jpg')
+        p {{contact.name}}
+        md-divider(ng-if='!$last')
+            
+  .flex(ui-view='')

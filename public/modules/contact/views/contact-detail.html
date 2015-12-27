@@ -1,0 +1,21 @@
+
+<md-card style="box-shadow:none">
+  <md-card-title>
+    <md-card-title-text><span class="md-headline">{{vm.contact.name}}</span><span class="md-subhead">{{vm.contact.email}} </span><span class="md-subhead">{{vm.contact.tel}} </span></md-card-title-text>
+    <md-card-title-media>
+      <div class="md-media-lg card-media"><img ng-src="images/faces/{{vm.contact.id}}.jpg"/></div>
+    </md-card-title-media>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button ng-click="vm.onEdit($event)" class="md-icon-button">
+      <ng-md-icon icon="mode_edit"></ng-md-icon>
+    </md-button>
+    <md-button ng-click="vm.onDelete($event)" class="md-icon-button">
+      <ng-md-icon icon="delete"></ng-md-icon>
+    </md-button>
+  </md-card-actions>
+  <md-card-content>
+    <h3>About Me</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.</p>
+  </md-card-content>
+</md-card>

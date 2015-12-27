@@ -1,0 +1,12 @@
+
+<md-content class="layout-row flex">
+  <div style="border-right:1px solid rgba(0,0,0,.12)">
+    <md-list>
+      <md-list-item ng-repeat="contact in vm.contacts" ng-click="vm.onSelect(contact)" ng-class="{selected:vm.contact.id == contact.id}"><img ng-src="images/faces/{{contact.id}}.jpg" class="md-avatar"/>
+        <p>{{contact.name}}</p>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+  </div>
+  <div ui-view="" class="flex"></div>
+</md-content>

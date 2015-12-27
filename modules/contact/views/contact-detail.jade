@@ -1,0 +1,18 @@
+
+md-card(style='box-shadow:none')
+  md-card-title
+    md-card-title-text
+      span.md-headline {{vm.contact.name}}
+      span.md-subhead {{vm.contact.email}} 
+      span.md-subhead {{vm.contact.tel}} 
+    md-card-title-media
+      .md-media-lg.card-media
+        img(ng-src='images/faces/{{vm.contact.id}}.jpg')
+  md-card-actions(layout="row" layout-align="end center")
+    md-button.md-icon-button(ng-click='vm.onEdit($event)')
+      ng-md-icon(icon='mode_edit')
+    md-button.md-icon-button(ng-click='vm.onDelete($event)')
+      ng-md-icon(icon='delete')
+  md-card-content
+    h3 About Me
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.

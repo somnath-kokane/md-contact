@@ -1,0 +1,24 @@
+div.page-layout.carded
+  md-toolbar.top-bg.md-accent
+  div(layout='row')
+    md-sidenav.sidenav(md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav")
+      .header
+        h3 Contact
+      
+      md-button.md-margin.md-raised.md-accent(ng-click='vm.onAdd($event)') 
+        span Add Contact
+    div.center(layout='column' flex)
+      div(layout='row' layout-align='start center' flex style='height:140px;')
+        md-toolbar.md-menu-toolbar
+          .md-toolbar-tools
+            ng-md-icon(icon='search') 
+            md-input-container.md-block(flex)
+              label &nbsp;
+              input(type='text'
+                ng-change='vm.onSearch(vm.searchText)' 
+                ng-model='vm.searchText' ng-model-options='{debounce:600}'
+                style='top:14px;position:relative;border:none')
+              .md-placeholder(style='top:-8px') Search for contact
+      div(layout='column' flex)
+        md-toolbar.toolbar.md-menu-toolbar
+        div(layout='row' ui-view='')

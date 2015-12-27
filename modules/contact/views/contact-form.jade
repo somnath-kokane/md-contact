@@ -1,0 +1,35 @@
+//- h2 Contact Form
+
+//- div.layout-column
+//-   p
+//-     label Name
+//-     input(type='text' ng-model='vm.contact.name')
+//-   p
+//-     labe Email
+//-     input(type='email' ng-model='vm.contact.email')
+//-   p
+//-     button(ng-click='vm.onSave()') Save
+
+md-dialog(aria-label="Contact form"  ng-cloak style='width:350px')
+  form(name='cForm' novalidate autocomplete='off' ng-submit='cForm.$valid && vm.onSave()')
+    md-toobar
+      .md-toolbar-tools
+        h3 Contact form
+        span(flex)
+        md-button.md-icon-button
+          ng-md-icon(icon='close' ng-click='cancel()')
+    md-dialog-content
+      .md-dialog-content(layout='column')
+        md-input-container.md-block
+          label Name
+          input(type='text' name='name' ng-model='vm.contact.name' required)
+        md-input-container.md-block
+          label Email
+          input(type='email' name='email' ng-model='vm.contact.email' required)
+        md-input-container.md-block
+          label Tel
+          input(type='text' name='tel' ng-model='vm.contact.tel')
+    md-dialog-actions(layout='row')
+      span(flex)
+      md-button(ng-click='cancel()') Close
+      md-button(type='submit') Save

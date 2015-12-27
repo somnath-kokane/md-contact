@@ -1,0 +1,30 @@
+
+<div class="page-layout carded">
+  <md-toolbar class="top-bg md-accent"></md-toolbar>
+  <div layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-md')" md-component-id="main-sidenav" class="sidenav">
+      <div class="header">
+        <h3>Contact</h3>
+      </div>
+      <md-button ng-click="vm.onAdd($event)" class="md-margin md-raised md-accent"> <span>Add Contact</span></md-button>
+    </md-sidenav>
+    <div layout="column" flex="flex" class="center">
+      <div layout="row" layout-align="start center" flex="flex" style="height:140px;">
+        <md-toolbar class="md-menu-toolbar">
+          <div class="md-toolbar-tools">
+            <ng-md-icon icon="search"> </ng-md-icon>
+            <md-input-container flex="flex" class="md-block">
+              <label>&nbsp;</label>
+              <input type="text" ng-change="vm.onSearch(vm.searchText)" ng-model="vm.searchText" ng-model-options="{debounce:600}" style="top:14px;position:relative;border:none"/>
+              <div style="top:-8px" class="md-placeholder">Search for contact</div>
+            </md-input-container>
+          </div>
+        </md-toolbar>
+      </div>
+      <div layout="column" flex="flex">
+        <md-toolbar class="toolbar md-menu-toolbar"></md-toolbar>
+        <div layout="row" ui-view=""></div>
+      </div>
+    </div>
+  </div>
+</div>
