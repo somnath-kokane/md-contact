@@ -1,6 +1,6 @@
 # md-contact
 
-[Heroku App](https://md-contact.herokuapp.com/#/contact/list){:target="_blank"}
+[Heroku App](https://md-contact.herokuapp.com/#/contact/list '' target="_blank")
 
 ##folder structure
 
