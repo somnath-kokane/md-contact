@@ -2,6 +2,9 @@
 
     angular.module('app', []);
 
+    angular.module('main', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons',
+            'app', 'app.contact']);
+
     angular
         .module('app')
         .config(configure);

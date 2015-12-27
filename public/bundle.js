@@ -3,6 +3,9 @@
 
     angular.module('app', []);
 
+    angular.module('main', ['ui.router', 'ngMaterial', 'ngMessages', 'ngMdIcons',
+            'app', 'app.contact']);
+
     angular
         .module('app')
         .config(configure);
@@ -176,6 +179,7 @@
         activate();
 
         function activate(){
+            vm.version = '1.0.0';
             vm.contacts = angular.copy(contacts);
             vm.onSelect = onSelect;
             $scope.$on('contact:refresh', onRefresh);
@@ -195,7 +199,7 @@
         }
 
         function onSearch(event, q){
-            return Contact.getList({q: q}).then(function(data){
+            Contact.getList({q: q}).then(function(data){
                 vm.contacts = data;
                 onSelect(vm.contacts[0]);
             })
@@ -215,9 +219,9 @@
         .module('app.contact')
         .controller('ContactCtrl', ContactCtrl);
 
-    ContactCtrl.$inject = ['$rootScope', '$scope', '$state', '$mdDialog', '$mdMedia', 'Contact'];
+    ContactCtrl.$inject = ['$scope', '$state', '$mdDialog', '$mdMedia', 'Contact'];
 
-    function ContactCtrl($rootScope, $scope, $state, $mdDialog, $mdMedia, Contact){
+    function ContactCtrl($scope, $state, $mdDialog, $mdMedia, Contact){
         var vm = this;
 
         activate();

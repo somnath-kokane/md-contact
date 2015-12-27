@@ -12,6 +12,7 @@
         activate();
 
         function activate(){
+            vm.version = '1.0.0';
             vm.contacts = angular.copy(contacts);
             vm.onSelect = onSelect;
             $scope.$on('contact:refresh', onRefresh);
@@ -31,7 +32,7 @@
         }
 
         function onSearch(event, q){
-            return Contact.getList({q: q}).then(function(data){
+            Contact.getList({q: q}).then(function(data){
                 vm.contacts = data;
                 onSelect(vm.contacts[0]);
             })

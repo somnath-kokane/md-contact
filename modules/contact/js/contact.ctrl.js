@@ -4,9 +4,9 @@
         .module('app.contact')
         .controller('ContactCtrl', ContactCtrl);
 
-    ContactCtrl.$inject = ['$rootScope', '$scope', '$state', '$mdDialog', '$mdMedia', 'Contact'];
+    ContactCtrl.$inject = ['$scope', '$state', '$mdDialog', '$mdMedia', 'Contact'];
 
-    function ContactCtrl($rootScope, $scope, $state, $mdDialog, $mdMedia, Contact){
+    function ContactCtrl($scope, $state, $mdDialog, $mdMedia, Contact){
         var vm = this;
 
         activate();
